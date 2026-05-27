@@ -36,6 +36,17 @@ const theoryHTML = `
                     <li>Test final cu 15 întrebări mixte</li>
                 </ul>
             </div>
+
+            <div class="theory-box" style="background: #ecfdf5; border-color: #10b981;">
+                <h4>🔤 Tipologia vocabularului B2 — Sg/Pl orientativ</h4>
+                <p>La nivelul B2, substantivele din tabelele de mai jos sunt majoritar <strong>concepte educaționale</strong> sau <strong>compuse cu sens specific</strong>. Iată tipologia:</p>
+                <ul style="margin-left: 18px;">
+                    <li><strong>Concepte sg tantum</strong>: <em>das Studium, die Ausbildung, das Wissen, die Praxis (academică)</em></li>
+                    <li><strong>Substantive concrete cu plural</strong>: <em>der Beruf · die Berufe</em> · <em>die Universität · die Universitäten</em> · <em>das Praktikum · die Praktika</em></li>
+                    <li><strong>Colocații verbale</strong>: „eine Lehre machen", „im dualen System lernen" — formule fixe</li>
+                </ul>
+                <p style="margin-top: 8px;">Pentru substantivele concrete noi, verifică pluralul pe <a href="https://de.pons.com/deklination/deutsch" target="_blank" style="color: #047857;">PONS</a> — la examenul B2, precizia gen+plural face diferența.</p>
+            </div>
         </div>
     </div>
 
