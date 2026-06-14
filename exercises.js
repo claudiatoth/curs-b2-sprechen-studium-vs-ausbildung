@@ -109,7 +109,7 @@ function buildEx2() {
             <div class="exercise-item">
                 <span class="exercise-number">${index + 1}</span>
                 <div class="input-group">
-                    <label><strong style="color:#6b7280; font-size:1.05rem;">${item.ro}</strong></label>
+                    <label><strong style="color:#5A5147; font-size:1.05rem;">${item.ro}</strong></label>
                     <input type="text" id="ex2-${item.id}" placeholder="traducere DE...">
                 </div>
                 <div class="feedback" id="ex2-f${item.id}"></div>
