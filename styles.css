@@ -1468,3 +1468,12 @@ body {
     margin: 14px auto 0;
     border-radius: 2px;
 }
+
+
+/* ===== 👁 Traducere RO ascunsa (auto-verificare) - buton + reveal ===== */
+.ro-toggle { display: inline-flex; align-items: center; justify-content: center; margin-left: 6px; padding: 0 6px; font-size: 0.9rem; line-height: 1.5; border: 1px solid #D4A574; background: #FBF7EF; color: #5A5147; border-radius: 6px; cursor: pointer; vertical-align: middle; transition: background 0.15s, color 0.15s; }
+.ro-toggle:hover { background: #F5F0E8; }
+.ro-toggle.active { background: #D4A574; color: #fff; border-color: #D4A574; }
+.ro-reveal { display: none; color: #047857; font-style: italic; font-size: 0.95rem; }
+.ro-reveal.show { display: inline; margin-left: 4px; }
+.ro-reveal::before { content: ""; }

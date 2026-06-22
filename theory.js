@@ -4,6 +4,10 @@
 // ============================================
 
 const theoryHTML = `
+
+    <div class="theory-box" style="background:#FBF7EF; border-color:#D4A574;">
+        <p style="margin:0; font-size:0.95rem;">👁 <strong>Auto-verificare:</strong> în tabele, coloana cu traducerea română e <strong>ascunsă</strong>. Încearcă întâi să traduci tu termenul german, apoi dă click pe <strong>👁</strong> ca să te verifici.</p>
+    </div>
     <!-- 0: Intro + roluri -->
     <div class="sub-section">
         <div class="sub-section-header" onclick="toggleSubSection(0)">
@@ -22,7 +26,7 @@ const theoryHTML = `
                 <table class="grammar-table">
                     <tr><th>Cursant</th><th>Poziție</th><th>Argumente principale</th></tr>
                     <tr><td><strong>Cursant A</strong></td><td>vrea <strong>Studium</strong> (universitate)</td><td>prestigiu academic, carieră internațională, salariu mare pe termen lung, posibilitatea de a face cercetare</td></tr>
-                    <tr><td><strong>Cursant B</strong></td><td>vrea <strong>Ausbildung</strong></td><td>experiență practică imediată, salariu chiar din primul an, fără datorii studențești, contract sigur</td></tr>
+                    <tr><td><strong>Cursant B</strong></td><td>vrea <strong>Ausbildung</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">experiență practică imediată, salariu chiar din primul an, fără datorii studențești, contract sigur</span></td></tr>
                 </table>
             </div>
 
@@ -60,18 +64,18 @@ const theoryHTML = `
             <div class="theory-box">
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>das Studium</strong></td><td>studiul universitar</td></tr>
-                    <tr><td><strong>die Universität / die Uni</strong></td><td>universitatea</td></tr>
-                    <tr><td><strong>die Fachhochschule (FH)</strong></td><td>universitatea de științe aplicate</td></tr>
-                    <tr><td><strong>die Ausbildung</strong></td><td>școala profesională / formarea profesională</td></tr>
-                    <tr><td><strong>die Berufsschule</strong></td><td>școala de meserii</td></tr>
-                    <tr><td><strong>das duale Studium</strong></td><td>studiul dual (universitate + firmă)</td></tr>
-                    <tr><td><strong>der Bachelor</strong></td><td>licența</td></tr>
-                    <tr><td><strong>der Master</strong></td><td>masterul</td></tr>
-                    <tr><td><strong>das Praktikum</strong></td><td>stagiul de practică</td></tr>
-                    <tr><td><strong>der Abschluss</strong></td><td>absolvirea / diploma</td></tr>
-                    <tr><td><strong>das Abitur</strong></td><td>bacalaureatul german</td></tr>
-                    <tr><td><strong>die Hochschulreife</strong></td><td>permisiunea de a urma studii superioare</td></tr>
+                    <tr><td><strong>das Studium</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">studiul universitar</span></td></tr>
+                    <tr><td><strong>die Universität / die Uni</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">universitatea</span></td></tr>
+                    <tr><td><strong>die Fachhochschule (FH)</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">universitatea de științe aplicate</span></td></tr>
+                    <tr><td><strong>die Ausbildung</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">școala profesională / formarea profesională</span></td></tr>
+                    <tr><td><strong>die Berufsschule</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">școala de meserii</span></td></tr>
+                    <tr><td><strong>das duale Studium</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">studiul dual (universitate + firmă)</span></td></tr>
+                    <tr><td><strong>der Bachelor</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">licența</span></td></tr>
+                    <tr><td><strong>der Master</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">masterul</span></td></tr>
+                    <tr><td><strong>das Praktikum</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">stagiul de practică</span></td></tr>
+                    <tr><td><strong>der Abschluss</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">absolvirea / diploma</span></td></tr>
+                    <tr><td><strong>das Abitur</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">bacalaureatul german</span></td></tr>
+                    <tr><td><strong>die Hochschulreife</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">permisiunea de a urma studii superioare</span></td></tr>
                 </table>
             </div>
         </div>
@@ -87,18 +91,18 @@ const theoryHTML = `
             <div class="theory-box">
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>sich entscheiden für + Akk.</strong></td><td>a se decide pentru ceva</td></tr>
-                    <tr><td><strong>eine Entscheidung treffen</strong></td><td>a lua o decizie</td></tr>
-                    <tr><td><strong>sich (Dat.) etwas gut überlegen</strong></td><td>a se gândi bine la ceva</td></tr>
-                    <tr><td><strong>die Zukunft planen</strong></td><td>a planifica viitorul</td></tr>
-                    <tr><td><strong>einen Beruf wählen</strong></td><td>a alege o profesie</td></tr>
-                    <tr><td><strong>sich bewerben (für + Akk.)</strong></td><td>a aplica (pentru ceva)</td></tr>
-                    <tr><td><strong>die Bewerbung einreichen</strong></td><td>a depune dosarul</td></tr>
-                    <tr><td><strong>angenommen werden</strong></td><td>a fi admis</td></tr>
-                    <tr><td><strong>abgelehnt werden</strong></td><td>a fi respins</td></tr>
-                    <tr><td><strong>der Numerus Clausus (NC)</strong></td><td>media de admitere la facultate</td></tr>
-                    <tr><td><strong>der Studienplatz</strong></td><td>locul la universitate</td></tr>
-                    <tr><td><strong>der Ausbildungsplatz</strong></td><td>locul de stagiu / ucenicie</td></tr>
+                    <tr><td><strong>sich entscheiden für + Akk.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a se decide pentru ceva</span></td></tr>
+                    <tr><td><strong>eine Entscheidung treffen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a lua o decizie</span></td></tr>
+                    <tr><td><strong>sich (Dat.) etwas gut überlegen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a se gândi bine la ceva</span></td></tr>
+                    <tr><td><strong>die Zukunft planen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a planifica viitorul</span></td></tr>
+                    <tr><td><strong>einen Beruf wählen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a alege o profesie</span></td></tr>
+                    <tr><td><strong>sich bewerben (für + Akk.)</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a aplica (pentru ceva)</span></td></tr>
+                    <tr><td><strong>die Bewerbung einreichen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a depune dosarul</span></td></tr>
+                    <tr><td><strong>angenommen werden</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi admis</span></td></tr>
+                    <tr><td><strong>abgelehnt werden</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi respins</span></td></tr>
+                    <tr><td><strong>der Numerus Clausus (NC)</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">media de admitere la facultate</span></td></tr>
+                    <tr><td><strong>der Studienplatz</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">locul la universitate</span></td></tr>
+                    <tr><td><strong>der Ausbildungsplatz</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">locul de stagiu / ucenicie</span></td></tr>
                 </table>
             </div>
         </div>
@@ -114,18 +118,18 @@ const theoryHTML = `
             <div class="theory-box" style="background: #d1fae5;">
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>der akademische Abschluss</strong></td><td>diplomă academică</td></tr>
-                    <tr><td><strong>Akademiker werden</strong></td><td>a deveni academician / intelectual</td></tr>
-                    <tr><td><strong>bessere Karrierechancen haben</strong></td><td>a avea șanse mai bune de carieră</td></tr>
-                    <tr><td><strong>international arbeiten</strong></td><td>a lucra internațional</td></tr>
-                    <tr><td><strong>höheres Gehalt verdienen</strong></td><td>a câștiga salariu mai mare</td></tr>
-                    <tr><td><strong>in die Forschung gehen</strong></td><td>a intra în cercetare</td></tr>
-                    <tr><td><strong>wissenschaftlich arbeiten</strong></td><td>a lucra științific</td></tr>
-                    <tr><td><strong>theoretisches Wissen vertiefen</strong></td><td>a aprofunda cunoștințe teoretice</td></tr>
-                    <tr><td><strong>Führungspositionen erreichen</strong></td><td>a ajunge în poziții de conducere</td></tr>
-                    <tr><td><strong>ein breites Berufsfeld</strong></td><td>un domeniu larg de profesii</td></tr>
-                    <tr><td><strong>im Ausland studieren</strong></td><td>a studia în străinătate</td></tr>
-                    <tr><td><strong>Erasmus machen</strong></td><td>a face Erasmus</td></tr>
+                    <tr><td><strong>der akademische Abschluss</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">diplomă academică</span></td></tr>
+                    <tr><td><strong>Akademiker werden</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a deveni academician / intelectual</span></td></tr>
+                    <tr><td><strong>bessere Karrierechancen haben</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a avea șanse mai bune de carieră</span></td></tr>
+                    <tr><td><strong>international arbeiten</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a lucra internațional</span></td></tr>
+                    <tr><td><strong>höheres Gehalt verdienen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a câștiga salariu mai mare</span></td></tr>
+                    <tr><td><strong>in die Forschung gehen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a intra în cercetare</span></td></tr>
+                    <tr><td><strong>wissenschaftlich arbeiten</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a lucra științific</span></td></tr>
+                    <tr><td><strong>theoretisches Wissen vertiefen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a aprofunda cunoștințe teoretice</span></td></tr>
+                    <tr><td><strong>Führungspositionen erreichen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a ajunge în poziții de conducere</span></td></tr>
+                    <tr><td><strong>ein breites Berufsfeld</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">un domeniu larg de profesii</span></td></tr>
+                    <tr><td><strong>im Ausland studieren</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a studia în străinătate</span></td></tr>
+                    <tr><td><strong>Erasmus machen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a face Erasmus</span></td></tr>
                 </table>
             </div>
         </div>
@@ -141,18 +145,18 @@ const theoryHTML = `
             <div class="theory-box" style="background: #F5F0E8;">
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>praktische Erfahrung sammeln</strong></td><td>a acumula experiență practică</td></tr>
-                    <tr><td><strong>von Anfang an Geld verdienen</strong></td><td>a câștiga bani de la început</td></tr>
-                    <tr><td><strong>die Ausbildungsvergütung</strong></td><td>indemnizația de ucenicie</td></tr>
-                    <tr><td><strong>finanziell unabhängig sein</strong></td><td>a fi independent financiar</td></tr>
-                    <tr><td><strong>keine Studienschulden haben</strong></td><td>a nu avea datorii studențești</td></tr>
-                    <tr><td><strong>schneller im Beruf sein</strong></td><td>a fi mai repede în profesie</td></tr>
-                    <tr><td><strong>einen festen Arbeitsvertrag</strong></td><td>un contract de muncă fix</td></tr>
-                    <tr><td><strong>von der Firma übernommen werden</strong></td><td>a fi preluat de firmă</td></tr>
-                    <tr><td><strong>handwerkliches Geschick</strong></td><td>îndemânare practică</td></tr>
-                    <tr><td><strong>Fachkraft werden</strong></td><td>a deveni specialist (cu calificare)</td></tr>
-                    <tr><td><strong>Fachkräftemangel</strong></td><td>lipsă de personal calificat</td></tr>
-                    <tr><td><strong>sichere Berufsaussichten</strong></td><td>perspective profesionale sigure</td></tr>
+                    <tr><td><strong>praktische Erfahrung sammeln</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a acumula experiență practică</span></td></tr>
+                    <tr><td><strong>von Anfang an Geld verdienen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a câștiga bani de la început</span></td></tr>
+                    <tr><td><strong>die Ausbildungsvergütung</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">indemnizația de ucenicie</span></td></tr>
+                    <tr><td><strong>finanziell unabhängig sein</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi independent financiar</span></td></tr>
+                    <tr><td><strong>keine Studienschulden haben</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a nu avea datorii studențești</span></td></tr>
+                    <tr><td><strong>schneller im Beruf sein</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi mai repede în profesie</span></td></tr>
+                    <tr><td><strong>einen festen Arbeitsvertrag</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">un contract de muncă fix</span></td></tr>
+                    <tr><td><strong>von der Firma übernommen werden</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi preluat de firmă</span></td></tr>
+                    <tr><td><strong>handwerkliches Geschick</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">îndemânare practică</span></td></tr>
+                    <tr><td><strong>Fachkraft werden</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a deveni specialist (cu calificare)</span></td></tr>
+                    <tr><td><strong>Fachkräftemangel</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">lipsă de personal calificat</span></td></tr>
+                    <tr><td><strong>sichere Berufsaussichten</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">perspective profesionale sigure</span></td></tr>
                 </table>
             </div>
         </div>
@@ -169,14 +173,14 @@ const theoryHTML = `
                 <h4>Contra Studium (universitate)</h4>
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>die lange Studiendauer</strong></td><td>durata lungă a studiilor</td></tr>
-                    <tr><td><strong>hohe Lebenshaltungskosten</strong></td><td>costuri ridicate de trai</td></tr>
-                    <tr><td><strong>der BAföG-Kredit</strong></td><td>creditul studențesc BAföG</td></tr>
-                    <tr><td><strong>Studienschulden machen</strong></td><td>a face datorii din studii</td></tr>
-                    <tr><td><strong>nebenbei jobben müssen</strong></td><td>a fi obligat să muncești pe lângă</td></tr>
-                    <tr><td><strong>zu viel Theorie, wenig Praxis</strong></td><td>prea multă teorie, puțină practică</td></tr>
-                    <tr><td><strong>die Arbeitslosigkeit nach dem Studium</strong></td><td>șomajul după facultate</td></tr>
-                    <tr><td><strong>überqualifiziert sein</strong></td><td>a fi supracalificat</td></tr>
+                    <tr><td><strong>die lange Studiendauer</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">durata lungă a studiilor</span></td></tr>
+                    <tr><td><strong>hohe Lebenshaltungskosten</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">costuri ridicate de trai</span></td></tr>
+                    <tr><td><strong>der BAföG-Kredit</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">creditul studențesc BAföG</span></td></tr>
+                    <tr><td><strong>Studienschulden machen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a face datorii din studii</span></td></tr>
+                    <tr><td><strong>nebenbei jobben müssen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi obligat să muncești pe lângă</span></td></tr>
+                    <tr><td><strong>zu viel Theorie, wenig Praxis</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">prea multă teorie, puțină practică</span></td></tr>
+                    <tr><td><strong>die Arbeitslosigkeit nach dem Studium</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">șomajul după facultate</span></td></tr>
+                    <tr><td><strong>überqualifiziert sein</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi supracalificat</span></td></tr>
                 </table>
             </div>
 
@@ -184,13 +188,13 @@ const theoryHTML = `
                 <h4>Contra Ausbildung</h4>
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>begrenzte Karrieremöglichkeiten</strong></td><td>posibilități limitate de carieră</td></tr>
-                    <tr><td><strong>langfristig weniger verdienen</strong></td><td>a câștiga mai puțin pe termen lung</td></tr>
-                    <tr><td><strong>körperlich anstrengend sein</strong></td><td>a fi solicitant fizic</td></tr>
-                    <tr><td><strong>Schichtarbeit</strong></td><td>munca în schimburi</td></tr>
-                    <tr><td><strong>früh aufstehen müssen</strong></td><td>a trebui să te trezești devreme</td></tr>
-                    <tr><td><strong>weniger Prestige genießen</strong></td><td>a se bucura de mai puțin prestigiu</td></tr>
-                    <tr><td><strong>schwierig, sich umzuorientieren</strong></td><td>greu de reorientare profesională</td></tr>
+                    <tr><td><strong>begrenzte Karrieremöglichkeiten</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">posibilități limitate de carieră</span></td></tr>
+                    <tr><td><strong>langfristig weniger verdienen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a câștiga mai puțin pe termen lung</span></td></tr>
+                    <tr><td><strong>körperlich anstrengend sein</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a fi solicitant fizic</span></td></tr>
+                    <tr><td><strong>Schichtarbeit</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">munca în schimburi</span></td></tr>
+                    <tr><td><strong>früh aufstehen müssen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a trebui să te trezești devreme</span></td></tr>
+                    <tr><td><strong>weniger Prestige genießen</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">a se bucura de mai puțin prestigiu</span></td></tr>
+                    <tr><td><strong>schwierig, sich umzuorientieren</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">greu de reorientare profesională</span></td></tr>
                 </table>
             </div>
         </div>
@@ -207,14 +211,14 @@ const theoryHTML = `
                 <h4>Pentru argumentare</h4>
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>Ich bin der Meinung, dass...</strong></td><td>Sunt de părere că...</td></tr>
-                    <tr><td><strong>Meiner Meinung nach...</strong></td><td>După părerea mea...</td></tr>
-                    <tr><td><strong>Was hältst du davon?</strong></td><td>Ce părere ai despre asta?</td></tr>
-                    <tr><td><strong>Wie siehst du das?</strong></td><td>Cum vezi tu asta?</td></tr>
-                    <tr><td><strong>Ein wichtiger Vorteil ist...</strong></td><td>Un avantaj important este...</td></tr>
-                    <tr><td><strong>Andererseits...</strong></td><td>Pe de altă parte...</td></tr>
-                    <tr><td><strong>Im Gegensatz dazu...</strong></td><td>Spre deosebire de asta...</td></tr>
-                    <tr><td><strong>Dazu kommt noch, dass...</strong></td><td>În plus, faptul că...</td></tr>
+                    <tr><td><strong>Ich bin der Meinung, dass...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Sunt de părere că...</span></td></tr>
+                    <tr><td><strong>Meiner Meinung nach...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">După părerea mea...</span></td></tr>
+                    <tr><td><strong>Was hältst du davon?</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Ce părere ai despre asta?</span></td></tr>
+                    <tr><td><strong>Wie siehst du das?</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Cum vezi tu asta?</span></td></tr>
+                    <tr><td><strong>Ein wichtiger Vorteil ist...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Un avantaj important este...</span></td></tr>
+                    <tr><td><strong>Andererseits...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Pe de altă parte...</span></td></tr>
+                    <tr><td><strong>Im Gegensatz dazu...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Spre deosebire de asta...</span></td></tr>
+                    <tr><td><strong>Dazu kommt noch, dass...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">În plus, faptul că...</span></td></tr>
                 </table>
             </div>
 
@@ -222,14 +226,14 @@ const theoryHTML = `
                 <h4>Pentru a fi de acord / a contrazice</h4>
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>Da hast du recht.</strong></td><td>Aici ai dreptate.</td></tr>
-                    <tr><td><strong>Das sehe ich genauso.</strong></td><td>Văd la fel.</td></tr>
-                    <tr><td><strong>Das stimmt schon, aber...</strong></td><td>Așa e, dar...</td></tr>
-                    <tr><td><strong>Da bin ich anderer Meinung.</strong></td><td>Aici am altă părere.</td></tr>
-                    <tr><td><strong>Das sehe ich anders.</strong></td><td>Eu văd altfel.</td></tr>
-                    <tr><td><strong>An deiner Stelle würde ich...</strong></td><td>În locul tău, eu aș...</td></tr>
-                    <tr><td><strong>Hast du daran gedacht, dass...?</strong></td><td>Te-ai gândit la faptul că...?</td></tr>
-                    <tr><td><strong>Ich verstehe deinen Punkt, aber...</strong></td><td>Înțeleg punctul tău, dar...</td></tr>
+                    <tr><td><strong>Da hast du recht.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Aici ai dreptate.</span></td></tr>
+                    <tr><td><strong>Das sehe ich genauso.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Văd la fel.</span></td></tr>
+                    <tr><td><strong>Das stimmt schon, aber...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Așa e, dar...</span></td></tr>
+                    <tr><td><strong>Da bin ich anderer Meinung.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Aici am altă părere.</span></td></tr>
+                    <tr><td><strong>Das sehe ich anders.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Eu văd altfel.</span></td></tr>
+                    <tr><td><strong>An deiner Stelle würde ich...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">În locul tău, eu aș...</span></td></tr>
+                    <tr><td><strong>Hast du daran gedacht, dass...?</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Te-ai gândit la faptul că...?</span></td></tr>
+                    <tr><td><strong>Ich verstehe deinen Punkt, aber...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Înțeleg punctul tău, dar...</span></td></tr>
                 </table>
             </div>
 
@@ -237,11 +241,11 @@ const theoryHTML = `
                 <h4>Pentru concluzie</h4>
                 <table class="grammar-table">
                     <tr><th>Germană</th><th>Română</th></tr>
-                    <tr><td><strong>Zusammenfassend kann man sagen...</strong></td><td>În concluzie se poate spune...</td></tr>
-                    <tr><td><strong>Alles in allem...</strong></td><td>În total...</td></tr>
-                    <tr><td><strong>Letztendlich muss jeder selbst entscheiden.</strong></td><td>În final fiecare trebuie să decidă singur.</td></tr>
-                    <tr><td><strong>Es kommt darauf an, was man will.</strong></td><td>Depinde de ce vrei.</td></tr>
-                    <tr><td><strong>Jeder Weg hat seine Vor- und Nachteile.</strong></td><td>Fiecare drum are avantaje și dezavantaje.</td></tr>
+                    <tr><td><strong>Zusammenfassend kann man sagen...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">În concluzie se poate spune...</span></td></tr>
+                    <tr><td><strong>Alles in allem...</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">În total...</span></td></tr>
+                    <tr><td><strong>Letztendlich muss jeder selbst entscheiden.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">În final fiecare trebuie să decidă singur.</span></td></tr>
+                    <tr><td><strong>Es kommt darauf an, was man will.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Depinde de ce vrei.</span></td></tr>
+                    <tr><td><strong>Jeder Weg hat seine Vor- und Nachteile.</strong></td><td><button class="ro-toggle" onclick="toggleRo(this)" title="Vezi traducerea" aria-label="Vezi traducerea">👁</button><span class="ro-reveal">Fiecare drum are avantaje și dezavantaje.</span></td></tr>
                 </table>
             </div>
         </div>
@@ -272,4 +276,15 @@ function toggleAudio(event, audioId) {
         audio.pause();
         btn.textContent = '▶';
     }
+}
+
+
+// 👁 Toggle traducere RO ascunsă (auto-verificare)
+function toggleRo(btn) {
+    const ro = btn.nextElementSibling;
+    if (!ro || !ro.classList.contains('ro-reveal')) return;
+    const open = ro.classList.toggle('show');
+    btn.classList.toggle('active', open);
+    btn.title = open ? 'Ascunde traducerea' : 'Vezi traducerea';
+    btn.setAttribute('aria-label', btn.title);
 }
